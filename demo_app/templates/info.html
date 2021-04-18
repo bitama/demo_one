@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body class="bg-success">
+    <div class="container bg-dark text-light mt-4">
+        <h1 class="text-primary">Employee Info</h1>
+    <h1>{{employee.first_name}} {{employee.last_name}}</h1>
+        <table class="table text-light">
+            
+            <tbody  >
+                <tr>
+                    <td>First Name:</td>
+                    <td>{{employee.first_name}}</td>
+                </tr>
+                <tr>
+                    <td>Middle Name:</td>
+                    <td>{{employee.middle_name}}</td>
+                </tr>
+                <tr>
+                    <td>Last Name:</td>
+                    <td>{{employee.last_name}}</td>
+                </tr>
+                <tr>
+                    <td>Salary:</td>
+                    <td>{{employee.salary}}</td>
+                </tr>
+            
+            </tbody>
+        </table>
+        <a href="/"class="btn btn-primary mb-3">Go back </a>
+
+    </div>
+    <div class="container mt-4"><p><a href="/employees/{{employee.id}}/edit">Edit name</a></p>this record</div>
+
+</body>
+</html>

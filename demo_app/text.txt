@@ -1,0 +1,29 @@
+>>> from demo_app.models import *
+>>> department_a = Department.objects.create(name="Sales")
+>>> department_b = Department.objects.create(name="Legal")
+>>> employee_a = Employee.objects.create(first_name="Robert", middle_name="James", last_name="Smith", salary=67000, active=True)
+
+>>> employee_a = Employee.objects.create(first_name="Robert", middle_name="James", last_name="Smith", salary=67000, department=department_a)
+>>> employee_b = Employee.objects.create(first_name="Hubert", middle_name="Jack", last_name="Samuel", salary=867000, department=department_b)
+>>> department_b
+<Department: Department object (2)>
+>>> department_b.Employees
+
+>>> department_b.employees
+<django.db.models.fields.related_descriptors.create_reverse_many_to_one_manager.<locals>.RelatedManager object at 0x0000019AE6DFDE50>
+>>> department_b.employees.all()
+<QuerySet [<Employee: Employee object (2)>]>
+>>> department_b.employees.filter(last_name="Samuel")
+<QuerySet [<Employee: Employee object (2)>]>
+>>> employee_b
+<Employee: Employee object (2)>
+
+>>> employee_b.first_name
+'Hubert'
+>>> employee_b.salary
+867000
+>>> employee_b.department.name
+'Legal'
+>>> employee_b.department.created_at
+datetime.datetime(2021, 4, 17, 12, 7, 44, 585244, tzinfo=<UTC>)
+>>>
