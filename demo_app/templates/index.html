@@ -60,9 +60,11 @@
             </div><br>
             <div class="form-group">
             Department:<select name="department_id">
+                <option value="-1"> create_new department</option>
                 {% for department in departments %}
                 <option value="{{department.id}}">{{department.name}}</option>
                 {% endfor %}
+                New Department:<input type="text" name="department_name" class="form-control" id=""><br>
             </select>
             </div>
             

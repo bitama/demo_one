@@ -9,6 +9,11 @@ def index(request):
 
 
 def create_user(request):
+    if request.POST["department_id"]=="-1":
+        department=Department.objects.create(name=request.POST["department_name"])
+    # else:
+    #     department=Department.objects.get(id=request.POST["department_id"])
+    
     Employee.objects.create(
         first_name=request.POST["first_name"],
         middle_name=request.POST["middle_name"],
